@@ -1,6 +1,7 @@
 console.log('Hello from js/scripts.js!');
 
-const customName = document.getElementById('customname');
+const customNameA = document.getElementById('customnameA');
+const customNameB = document.getElementById('customnameB');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
 
@@ -9,7 +10,7 @@ function randomValueFromArray(array){
   return array[random];
 }
 
-let storyText = 'It was 103 fahrenheit outside in the blistering heat, so :insertx: went for a walk on the yellow brick road. When they got to :inserty:, they stared in horror and disbelief for a few moments, then :insertz:. Jones saw the whole thing flash before his eyes, but was not surprised or bewildered — :insertx: weighs 300 pounds, and it was a hot and blistering day.';
+let storyText = 'It was 103 fahrenheit outside in the blistering heat, so :insertx: went for a walk on the yellow brick road. When they got to :inserty:, Cathy stared in horror and disbelief for a few moments, then :insertz:. Bob saw the whole thing flash before his eyes, but was not surprised or bewildered — :insertx: weighs 300 pounds, and it was a hot and blistering day.';
 let insertX = ['Willy the Green, happy Goblin','Big Daddy the Smelly Skunk','Father Christmas the Great'];
 let insertY = ['the soup kitchen','Disneyland','the White House','Lulu Lemon studio','Best Buy','McDonalds'];
 let insertZ = ['spontaneously combusted','melted into a puddle of pudding and marshmallows on the sidewalk','turned into a smelly slug and crawled away crying'];
@@ -28,9 +29,14 @@ function result() {
   newStory = newStory.replace(':inserty:',yItem);
   newStory = newStory.replace(':insertz:',zItem);
 
-  if(customName.value !== '') {
-    const name = customName.value;
+  if(customNameA.value !== '') {
+    const name = customNameA.value;
     newStory = newStory.replace('Bob',name);
+  }
+
+  if(customNameB.value !== '') {
+    const name = customNameB.value;
+    newStory = newStory.replace('Cathy',name);
   }
 
   if(document.getElementById("uk").checked) {
